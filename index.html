@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Details</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="view">
+
+        <div class="contain">
+            <div class="profile">
+            <img src alt="" id="img">
+            <div class="page" id="list">
+                <!-- <p>name</p>
+                <p>name</p> -->
+            </div>
+            
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="put">
+        <button onclick="prev()">Previous</button>
+        <button onclick="next()">Next</button>
+    </div>
+</body>
+
+</html>
+<script>
+    // let arr = [1,2,3,4,5]
+    
+    let img = document.getElementById('img')
+    let list = document.getElementById('list')
+    let index = 0
+     let arrObj = [
+    {Firstname: "Jules", Lastname: "James", age: 14, Gender: "Female", Skincolor: "Dark", Haircolor: "Brown", Nationality: "Nigeria", image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSMu7sW6PzU7ibQonl4AhXGxGfKnwuteezrDZAxWwB_82n7cbJsDYqlL5ZnKPzP883FlQ&usqp=CAU'},
+    {Firstname: "Dammy", Lastname: "Bells", age: 12, Gender: "Male", Skincolor: "Light", Haircolor: "Black", Nationality: "Nigeria", image:'img1-removebg-preview.png'},
+    {Firstname: "Bisoye", Lastname: "Villa", age: 16, Gender: "Female", Skincolor: "Light",Haircolor: "Blonde", Nationality: "Ethiopia", image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSMu7sW6PzU7ibQonl4AhXGxGfKnwuteezrDZAxWwB_82n7cbJsDYqlL5ZnKPzP883FlQ&usqp=CAU'},
+    {Firstname: "Tutu", Lastname: "Derele", age: 18, Gender: "Female", Skincolor: "Light", Haircolor: "Ginger", Nationality: "Somali", image:'img1-removebg-preview.png'},
+    {Firstname: "Bella", Lastname: "Jones", age: 19, Gender: "Female", Skincolor: "Dark", Haircolor: "Brown", Nationality: "Ghana", image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSMu7sW6PzU7ibQonl4AhXGxGfKnwuteezrDZAxWwB_82n7cbJsDYqlL5ZnKPzP883FlQ&usqp=CAU'},
+    {Firstname: "Josh", Lastname: "Peters", age: 19, Gender: "Male", Skincolor: "Dark", Haircolor: "Dark", Nationality: "Kenya" , image:'img1-removebg-preview.png'},
+    {Firstname: "Ife",  Lastname: "Coker", age: 17, Gender: "Female", Skincolor: "Dark", Haircolor: "Brown", Nationality: "Nigeria", image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSMu7sW6PzU7ibQonl4AhXGxGfKnwuteezrDZAxWwB_82n7cbJsDYqlL5ZnKPzP883FlQ&usqp=CAU'}];
+
+    function displayCard() {
+  img.src = arrObj[index].image
+list.innerHTML = `<h4> Name: ${arrObj[index].Firstname}  ${arrObj[index].Lastname} </h4>
+<h4> Age: ${arrObj[index].age} </h4>
+<h4> Gender: ${arrObj[index].Gender} </h4>
+<h4> Skin Color: ${arrObj[index].Skincolor} </h4>
+<h4> Hair Color: ${arrObj[index].Haircolor} </h4>
+<h4> Nationality: ${arrObj[index].Nationality} </h4>
+`  
+    }
+    
+displayCard()
+
+let filteredArr = arrObj.filter((obj, index)=> obj.age == 19 )
+
+let foundArr = arrObj.findIndex((obj, index)=> obj.age == 14 )
+console.log(foundArr);
+console.log(filteredArr);
+
+function prev() {
+    if (index == 0) {
+        index = arrObj.length - 1
+    }else{
+        index--
+    }
+displayCard()
+}
+
+function next() {
+    if (index == arrObj.length - 1 ) {
+        index = 0
+    }else{
+        index++
+    }
+    displayCard()
+
+}
+
+
+
+</script>
+

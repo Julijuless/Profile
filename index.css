@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.view {
+        /* background-color: bisque; */
+        width: 80%;
+        /* border-radius: 1px solid black; */
+        /* height: 80vh; */
+        /* display: flex; */
+        align-items: center;
+        padding-left: 180px;
+        justify-content: center;
+}
+
+.contain {
+        width: 50%;
+        height: 50vh;
+        /* align-items: center; */
+        /* justify-content: center; */
+        border: 1px solid black;
+}
+
+.put{
+   display: flex;
+   justify-content: space-evenly;
+   padding-right:600px;
+   margin-top: 30px;
+}
+.put button{
+    width: 60px;
+}
+.profile{
+    display: flex;
+    align-items: center;
+}
+
+.profile img{
+    width: 300px;
+    border-radius: 50px;
+    padding-right: 80px;
+}
+.page {
+    
+}
